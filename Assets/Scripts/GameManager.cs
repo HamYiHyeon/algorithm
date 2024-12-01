@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using static TileController;
 
@@ -141,5 +142,15 @@ public class GameManager : MonoBehaviour
     void FixedUpdate()
     {
         time += Time.deltaTime;
+        if (Vector2.Distance(wolf.transform.position, player.transform.position) < 1)
+        {
+            Debug.Log("gameover");
+            SceneManager.LoadScene("GameOver");
+        }
+        if (time > 180)
+        {
+            Debug.Log("endingscene");
+            SceneManager.LoadScene("EndingScene");
+        }
     }
 }

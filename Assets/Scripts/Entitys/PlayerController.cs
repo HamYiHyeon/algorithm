@@ -49,6 +49,5 @@ public class PlayerController : BehaviourScript
             spriter.flipX = nextVec.x < 0;
         }
         else anim.SetBool("x", false);
-        if (Vector2.Distance(wolf.transform.position, transform.position) < 1) gameObject.SetActive(false);
     }
 }
